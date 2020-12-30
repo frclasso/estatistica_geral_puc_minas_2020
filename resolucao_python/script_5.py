@@ -37,7 +37,7 @@ class EscoreZ:
 
 if __name__ == "__main__":
 
-    tempo_compra = [71, 73, 73, 74, 74, 75, 76, 77, 77, 79, 81, 83]
+    tempo_compra = sorted([71, 73, 73, 74, 74, 75, 76, 77, 77, 79, 81, 83])
 
     escore = EscoreZ(tempo_compra)
     media = escore.calcula_media()  # 76.08333333333333
