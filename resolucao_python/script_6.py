@@ -3,10 +3,8 @@ import math
 from typing import List
 
 
-class EscoreZ:
-    """O objetivo de se calcular o escore Z é expressar em unidades de
-    desvio padrão quanto um determinado número está distante da média
-    Para o cálculo do escore Z é necessário conhecer a média eo desvio padrão"""
+class DesafioPosRelativa:
+    """O Desafio do 0.5 abaixo e 1 acima da média."""
 
     def __init__(self, dados: List) -> None:
         self.dados = dados
@@ -24,25 +22,33 @@ class EscoreZ:
         Formula:
         Escore Z = valor - media / desvio padrao
         """
-        menor_valor = self.dados[posicao]
-        escore = (menor_valor - media) / desvio
+        valor = self.dados[posicao]
+        escore = (valor - media) / desvio
         return escore
+
+    def calcula_desvio_acima_abaixo(self,
+                                    num: float,
+                                    media: float,
+                                    desvio: float) -> float:
+        """Calcula desvios acima ou abaixo da média"""
+        valor = (num * desvio) + media
+        return round(valor, 4)
 
 
 if __name__ == "__main__":
 
     tempo_compra = [71, 73, 73, 74, 74, 75, 76, 77, 77, 79, 81, 83]
 
-    escore = EscoreZ(tempo_compra)
-    media = escore.calcula_media()
+    pos_rel = DesafioPosRelativa(tempo_compra)
+    media = pos_rel.calcula_media()
     print(f'Media de tempo: {media}')
-    desvio = escore.calc_std_dev()
+    desvio = pos_rel.calc_std_dev()
     print(f"Desvio padrão: {desvio}")
 
-    # escore_z = round(escore.calcula_escore_z(9, media, desvio), 4)
-    # print(f"O consumidor está  mais RAPIDO a  {escore_z} desvio padrão  abaixo  da média  do tempo"
-    #       f"gasto entre o início e a finalização da compra.")
-
     # Qual medida de tempo está a 1 desvio padrão acima da média ? (R: 79,6113)
+    print(f"Qual medida de tempo está a 1 desvio padrão acima da "
+          f"média? Resposta: {pos_rel.calcula_desvio_acima_abaixo(num=1, media=media, desvio=desvio)}")
 
     # Qual está a 0.5 desvio padrão abaixo  da média? (R: 74.3193)
+    print(f"Qual está a 0.5 desvio padrão abaixo  da média? "
+          f"- Resposta: {pos_rel.calcula_desvio_acima_abaixo(num=-0.5, media=media, desvio=desvio)}")

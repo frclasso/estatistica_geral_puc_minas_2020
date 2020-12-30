@@ -48,8 +48,8 @@ if __name__ == "__main__":
 
     escore_z = round(escore.calcula_escore_z(0, media, desvio), 4)
     print(f"O consumidor está  mais RAPIDO a  {escore_z} desvio padrão  abaixo  da média  do tempo"
-          f"gasto entre o início e a finalização da compra.")
+          f" gasto entre o início e a finalização da compra.")
 
     escore_z = round(escore.calcula_escore_z(11, media, desvio), 4)
     print(f"O consumidor está  mais LENTO a  {escore_z} desvio padrão  abaixo  da média  do tempo"
-      f"gasto entre o início e a finalização da compra.")
+      f" gasto entre o início e a finalização da compra.")
