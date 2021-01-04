@@ -1,5 +1,4 @@
 import statistics
-import math
 from typing import List
 
 
@@ -12,7 +11,6 @@ de uma empresa gastam para chegar ao trabalho:
 5, 12, 25, 43, 67
 ------------------------------------------------------------
     """
-
     def __init__(self, dados: List) -> None:
         self.dados = dados
 
@@ -42,4 +40,5 @@ if __name__ == "__main__":
     variancia = medidas_disp.calcula_variancia()
     print(f"Variancia: {variancia}")
     desvio_1 = medidas_disp.calcula_desvio_padrao()
-    print(f"Os funcionários levam {desvio_1} minutos para chegarem ao trabalho.") # 25.0559
+    # 25.0559
+    print(f"Os funcionários levam {desvio_1} minutos para chegarem ao trabalho.")

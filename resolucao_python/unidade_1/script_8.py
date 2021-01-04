@@ -14,6 +14,7 @@ Turma | n | Média | Desvio padrão
 Calcule o Coeficiente de variacao
 ----------------------------------
 """
+
     def __init__(self, dados: List[Dict]) -> None:
         self.dados = dados
 
@@ -41,5 +42,4 @@ if __name__ == "__main__":
     print(c.__doc__)
     # rodando em toda base de dados
     for num, v in enumerate(dados):
-       print(c.calcula_variacao(turmas=num))
-
+        print(c.calcula_variacao(turmas=num))
