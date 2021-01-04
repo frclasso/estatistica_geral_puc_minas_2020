@@ -65,13 +65,18 @@ necessárias
 
 class BoxPlot:
 
-    def __init__(self, q1: int, q2: int, q3: int, dados: List) -> None:
+    def __init__(self, q1: int, q2: int, q3: int, dados: List, outlier: int) -> None:
         self.q1 = q1
         self.q2 = q2
         self.q3 = q3
         self.dados = sorted(dados)
+        self.outlier = outlier
 
-        data = (18, 21, 27)
+        data = (self.dados[0],
+                self.q1,
+                self.q2,
+                self.q3,
+                self.outlier)
 
         plt.boxplot(data, vert=0)
         plt.title('Graficos Aula 2')
@@ -121,4 +126,4 @@ if __name__ == "__main__":
     print(f'Valor discrepante(outlier): {outlier}')
 
     # Gerando o gráfico Box Plot
-    boxplot = BoxPlot(q1, q2, q3, dados)
+    boxplot = BoxPlot(q1, q2, q3, dados, outlier)
