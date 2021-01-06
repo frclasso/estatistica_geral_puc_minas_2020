@@ -14,7 +14,7 @@ no qual sou estudante.
 
 Módulos
 -------
-- Unidade 1 (https://github.com/frclasso/estatistica_geral_puc_minas_2020/tree/main/resolucao_python/unidade_1)
+- Unidade 1: (https://github.com/frclasso/estatistica_geral_puc_minas_2020/tree/main/resolucao_python/unidade_1)
 
 Sigam-nos nas redes sociais
 ----------------------------
