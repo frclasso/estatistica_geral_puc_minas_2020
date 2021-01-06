@@ -1,5 +1,6 @@
 import math
 from typing import List
+from itertools import cycle
 
 
 class Sturges:
@@ -38,6 +39,7 @@ class Sturges:
 
     def calculaIntervaloTempo(self, t1, v):
         """Retorna os intervalos de tempo"""
+        global valor
         tempos = [t1, ]
         tempo = t1 + v
         tempos.append(tempo)
@@ -77,18 +79,31 @@ class Sturges:
         """Retorna lista de valores de frequencia acumulada
         valores a serem encontrados: 32, 43, 48, 48, 48, 50"""
 
-        val1 = [32, 11, 5, 0, 0, 2]
-        z = []
-        for i, a in enumerate(val1):
-            pos = i + 1
-            value = a + val1[pos]
-            print(a, value)
-        print(z)
+        freq_acum = [32, ]
+        indice = [i for i in range(len(valores))]
+        try:
+            for i, k, v in (zip(indice, cycle(freq_acum), valores)):
+                soma = freq_acum[-1] + valores[i + 1]
+                freq_acum.append(soma)
+        except IndexError:
+            pass
 
-    def calculaPorcAcumulda(self):
+        return freq_acum
+
+    def calculaPorcAcumulda(self, valores):
         """Retorna lista de valores de porcentagem acumulada
         valores a serem encontrados: 64.0, 86.0, 96.0, 96.0, 96.0, 100"""
-        pass
+        porcentagem_acum = [64.0, ]
+
+        indice = [i for i in range(len(valores))]
+        try:
+            for i, k, v in (zip(indice, cycle(porcentagem_acum), valores)):
+                soma = porcentagem_acum[-1] + valores[i + 1]
+                porcentagem_acum.append(soma)
+        except IndexError:
+            pass
+
+        return porcentagem_acum
 
 
 if __name__ == "__main__":
@@ -130,4 +145,7 @@ if __name__ == "__main__":
     print(f'Porcentagem: {porcentagem}')
 
     frequencia_acumulada = sturges.calculaFreqAcumulada(frequencia)
-    print(frequencia_acumulada)
+    print(f"Frequência Acumulada: {frequencia_acumulada}")
+
+    porcentagem_acumulada = sturges.calculaPorcAcumulda(porcentagem)
+    print(f"Porcentagem acumulada: {porcentagem_acumulada}")
