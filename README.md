@@ -10,6 +10,12 @@ no qual sou estudante.
 
 ![Image](https://github.com/frclasso/estatistica_geral_puc_minas_2020/blob/main/imagem.jpg)
 
+
+
+Módulos
+-------
+- Unidade 1 (https://github.com/frclasso/estatistica_geral_puc_minas_2020/tree/main/resolucao_python/unidade_1)
+
 Sigam-nos nas redes sociais
 ----------------------------
 
