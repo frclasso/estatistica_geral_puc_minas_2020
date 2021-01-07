@@ -101,6 +101,8 @@ class Sturges:
         try:
             for i, k, v in (zip(indice, cycle(porcentagem_acum), valores)):
                 soma = porcentagem_acum[-1] + valores[i + 1]
+                if i == 5:
+                    break
                 porcentagem_acum.append(soma)
         except IndexError:
             pass

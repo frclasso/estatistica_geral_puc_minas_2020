@@ -1,4 +1,4 @@
-from sturges import Sturges
+from script_10 import Sturges
 
 
 """
