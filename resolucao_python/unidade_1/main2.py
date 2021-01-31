@@ -16,11 +16,9 @@ pneus_direitos_defeituosos = tabela_cruzada.caluclaTotais(
     lado_direito_dianteiro,
     lado_direito_traseiro)
 
-
 pneus_esquerdos_defeituosos = tabela_cruzada.caluclaTotais(
     lado_esquerdo_dianteiro,
     lado_esquerdo_traseiro)
-
 
 total_pneus_dianteiros = tabela_cruzada.caluclaTotais(
     lado_direito_dianteiro,
@@ -33,7 +31,6 @@ total_pneus_traseiros = tabela_cruzada.caluclaTotais(
 total_geral = tabela_cruzada.caluclaTotais(
     total_pneus_dianteiros,
     total_pneus_traseiros)
-
 
 percentual_linha_1 = tabela_cruzada.calculoPercentualLinha(
     lado_direito_dianteiro,
@@ -64,11 +61,9 @@ percentual_total_linha_1 = tabela_cruzada.caluclaTotais(
     percentual_linha_3
 )
 
-
 percentual_total_linha_2 = tabela_cruzada.caluclaTotais(
     percentual_linha_2,
     percentual_linha_4)
-
 
 percentual_total_geral = tabela_cruzada.caluclaTotais(
     percentual_linha_5,
@@ -122,7 +117,6 @@ percentual_coluna_traseira_esquerda_tabela_7 = tabela_cruzada.calculoPercentualL
     lado_esquerdo_traseiro,
     total_geral)
 
-
 total_percentual_traseira = tabela_cruzada.caluclaTotais(
     percentual_coluna_traseira_direta_tabela_7,
     percentual_coluna_traseira_esquerda_tabela_7)
@@ -140,7 +134,8 @@ percentualTotal = tabela_cruzada.caluclaTotais(
     percentual_coluna_total_esquerda)
 
 
-def tabela(d1, d2, d3, t1, t2, t3, total1, total2, total3, columns=None):
+def tabela(d1, d2, d3, t1, t2, t3, total1, total2, total3,
+           columns: List = None):
     """Representação tabular do cálculo de Sturges conforme aula"""
 
     dianteira = [d1, d2, d3]
@@ -206,7 +201,6 @@ t7 = tabela(
     percentual_coluna_total_esquerda,
     percentualTotal,
     columns=['Dianteira(%)', 'Traseira(%)', 'Total(%)'])
-
 
 print()
 print('=' * 24 + ' TABELA 7 ' + '=' * 24)
