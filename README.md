@@ -14,11 +14,11 @@ no qual sou estudante.
 
 Módulos
 -------
+### Exercícios resolvidos em Python
 - [Unidade 1](https://github.com/frclasso/estatistica_geral_puc_minas_2020/tree/main/resolucao_python/unidade_1)
 - [Unidade 2](https://github.com/frclasso/estatistica_geral_puc_minas_2020/tree/main/resolucao_python/unidade_2)
 
-Sigam-nos nas redes sociais
-----------------------------
+### Sigam-nos nas redes sociais
 
 www.floripacodegurus.com.br
 
